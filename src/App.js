@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { SearchBar } from "./components/SearchBar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { CssBaseline, Container, Typography } from "@mui/material";
+
+const queryClient = new QueryClient({});
 
 function App() {
+  const [results, setResults] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <CssBaseline />
+      <Container>
+        <Typography variant="h4" component="h1" align="center" gutterBottom>
+          Simple search using React & MaterialUI
+        </Typography>
+        <SearchBar setResults={setResults} />
+      </Container>
+    </QueryClientProvider>
   );
 }
 
