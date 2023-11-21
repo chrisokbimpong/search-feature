@@ -52,6 +52,7 @@ export const SearchBar = ({ setResults }) => {
     <>
       <Paper elevation={3} sx={{ padding: 2, marginBottom: 2 }}>
         <TextField
+          color="warning"
           fullWidth
           type="text"
           label="Type to search"
