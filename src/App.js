@@ -14,7 +14,7 @@ function App() {
       <CssBaseline />
       <Container>
         <Typography variant="h4" component="h1" align="center" gutterBottom>
-          Simple search using React & MaterialUI
+          Simple search using React, React Query & MaterialUI
         </Typography>
         <SearchBar setResults={setResults} />
       </Container>
